@@ -2,16 +2,25 @@
 
 namespace app\queue\redis;
 
+use GatewayWorker\Lib\Gateway;
+use Webman\Event\Event;
 use Webman\RedisQueue\Consumer;
 
 class WordMessage implements Consumer
 {
     // 要消费的队列名
-    public $queue = 'word-message';
+    public string $queue = 'word-message';
     // 消费
-    public function consume($data)
+    public function consume($data): void
     {
-        // 无需反序列化
-        var_export($data);
+        try {
+            if(is_string($data)){
+                Gateway::sendToAll($data);
+            }else{
+                Gateway::sendToAll(json_encode($data));
+            }
+        } catch (\Exception $e) {
+            Event::emit('throw.chat',$e);
+        }
     }
 }
