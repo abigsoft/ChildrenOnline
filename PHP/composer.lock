@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6e8f99139f05257e831492c92e0a639b",
+    "content-hash": "41e8acf502b8dfcb2b99cd9d8984c184",
     "packages": [
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -4910,6 +4910,36 @@
                 }
             ],
             "time": "2022-01-24T18:55:24+00:00"
+        },
+        {
+            "name": "webman/action-hook",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webman-php/action-hook.git",
+                "reference": "d5339d6193a951d7a38f4c3260fb7adc05428c9d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webman-php/action-hook/zipball/d5339d6193a951d7a38f4c3260fb7adc05428c9d",
+                "reference": "d5339d6193a951d7a38f4c3260fb7adc05428c9d",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Webman\\ActionHook\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "support": {
+                "issues": "https://github.com/webman-php/action-hook/issues",
+                "source": "https://github.com/webman-php/action-hook/tree/v1.0.2"
+            },
+            "time": "2022-09-06T06:21:42+00:00"
         },
         {
             "name": "webman/captcha",

@@ -16,16 +16,17 @@ class ComposerStaticInit9e207f006f1373cff56073ec28e6e256
         '9b552a3cc426e3287cc811caefa3cf53' => __DIR__ . '/..' . '/topthink/think-helper/src/helper.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
+        '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
-        '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '35fab96057f1bf5e7aba31a8a6d5fdde' => __DIR__ . '/..' . '/topthink/think-orm/stubs/load_stubs.php',
         'ef65a1626449d89d0811cf9befce46f0' => __DIR__ . '/..' . '/illuminate/events/functions.php',
+        'd7aea416e3f938cf5640aa6138b497ab' => __DIR__ . '/..' . '/isszz/webman-sensitive/src/helpers.php',
         'b601d78e85da6f830c38c70f8e8382e6' => __DIR__ . '/..' . '/next/var-dumper/src/helpers.php',
         '2ffd98f0768af7a16d85759bb5922585' => __DIR__ . '/..' . '/taoser/webman-validate/src/helper.php',
         '35e9f8f50f832a8bb63c840d66d30e3c' => __DIR__ . '/..' . '/xy_jx/utils/src/helpers.php',
@@ -61,6 +62,10 @@ class ComposerStaticInit9e207f006f1373cff56073ec28e6e256
         array (
             'support\\' => 8,
         ),
+        'i' => 
+        array (
+            'isszz\\sensitive\\' => 16,
+        ),
         'a' => 
         array (
             'app\\View\\Components\\' => 20,
@@ -81,6 +86,7 @@ class ComposerStaticInit9e207f006f1373cff56073ec28e6e256
             'Webman\\Event\\' => 13,
             'Webman\\Console\\' => 15,
             'Webman\\Captcha\\' => 15,
+            'Webman\\ActionHook\\' => 18,
             'Webman\\' => 7,
         ),
         'T' => 
@@ -236,6 +242,10 @@ class ComposerStaticInit9e207f006f1373cff56073ec28e6e256
         array (
             0 => __DIR__ . '/..' . '/workerman/webman-framework/src/support',
         ),
+        'isszz\\sensitive\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/isszz/webman-sensitive/src',
+        ),
         'app\\View\\Components\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/view/components',
@@ -295,6 +305,10 @@ class ComposerStaticInit9e207f006f1373cff56073ec28e6e256
         'Webman\\Captcha\\' => 
         array (
             0 => __DIR__ . '/..' . '/webman/captcha/src',
+        ),
+        'Webman\\ActionHook\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webman/action-hook/src',
         ),
         'Webman\\' => 
         array (
