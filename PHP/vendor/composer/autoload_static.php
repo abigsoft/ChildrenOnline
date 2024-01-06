@@ -193,6 +193,7 @@ class ComposerStaticInit9e207f006f1373cff56073ec28e6e256
         'A' => 
         array (
             'App\\' => 4,
+            'Abigsoft\\LikeWebmanTp\\' => 22,
         ),
     );
 
@@ -580,6 +581,10 @@ class ComposerStaticInit9e207f006f1373cff56073ec28e6e256
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
+        ),
+        'Abigsoft\\LikeWebmanTp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/abigsoft/like-webman-tp/src',
         ),
     );
 

@@ -1,7 +1,7 @@
 <?php
 
 namespace app\admin\controller;
-
+use Abigsoft\LikeWebmanTp\facade\Url;
 use app\admin\model\AdminModel;
 use app\common\controller\BaseController;
 use support\Request;
@@ -15,7 +15,6 @@ class Login extends BaseController
     //用户登录
     public function index()
     {
-        //Route::getByName();
         if (!$this->request->isAjax()) {
             return view('login/index');
         } else {

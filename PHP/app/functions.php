@@ -332,15 +332,11 @@ function toUnderScore($str)
 if (!function_exists('url')) {
     /**
      * Url生成
-     * @param string      $name    路由地址
+     * @param string      $url    路由地址
      * @param array       $vars   变量
      */
-    function url(string $name = '', array $vars = []): string
+    function url(string $url = '', array $vars = [], $domain = false): string
     {
-        //$request = request();
-        if(empty($vars)){
-            return $name;
-        }
-        return $name . http_build_query($vars);
+        return \Abigsoft\LikeWebmanTp\facade\Url::url($url)->vars($vars)->domain($domain)->build();
     }
 }

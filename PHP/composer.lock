@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "41e8acf502b8dfcb2b99cd9d8984c184",
+    "content-hash": "9888628106604eecf0d626c440a7e006",
     "packages": [
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -1424,6 +1424,55 @@
                 }
             ],
             "time": "2022-05-21T17:30:32+00:00"
+        },
+        {
+            "name": "isszz/webman-sensitive",
+            "version": "v0.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/isszz/webman-sensitive.git",
+                "reference": "2ba0d578e1de12184bc71a498df57b5acdaf72e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/isszz/webman-sensitive/zipball/2ba0d578e1de12184bc71a498df57b5acdaf72e3",
+                "reference": "2ba0d578e1de12184bc71a498df57b5acdaf72e3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0.0",
+                "workerman/webman-framework": ">=1.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "dev-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "isszz\\sensitive\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "isszz",
+                    "email": "isszz@qq.com"
+                }
+            ],
+            "description": "Webman 敏感词检测，过滤，标记",
+            "support": {
+                "issues": "https://github.com/isszz/webman-sensitive/issues",
+                "source": "https://github.com/isszz/webman-sensitive/tree/v0.0.5"
+            },
+            "time": "2023-08-17T09:36:26+00:00"
         },
         {
             "name": "jasongrimes/paginator",
