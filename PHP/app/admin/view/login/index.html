@@ -100,15 +100,15 @@
             return false;
         }
 
-        var ajax = new $ax("{:url('index')}", function (data) {
-            if (1 === data.code) {
-                com.success(data.msg);
+        var ajax = new $ax("{:url('index')}", function (res) {
+            if (200 === res.status) {
+                com.success(res.msg);
                 $("#submit").val('正在登陆');
-                window.location.href = data.url;
+                window.location.href = res.data;
             } else {
                 $("#img").attr('src', "{:url('verify')}?=" + Math.random());
                 $("#verify").val("");
-                com.error(data.msg);
+                com.error(res.msg);
             }
         });
         ajax.set('account', account);

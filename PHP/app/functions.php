@@ -1,5 +1,8 @@
 <?php
 
+use app\admin\model\AdminAuthGroupAccessModel;
+use app\admin\model\AdminAuthGroupModel;
+use app\admin\model\AdminAuthRuleModel;
 use app\common\model\ConfigModel;
 use app\common\model\DictModel;
 use support\Cache;
@@ -339,4 +342,20 @@ if (!function_exists('url')) {
     {
         return \Abigsoft\LikeWebmanTp\facade\Url::url($url)->vars($vars)->domain($domain)->build();
     }
+}
+
+function auth_check($name,$uid){
+    $auth_rule = [];
+    $group_ids = AdminAuthGroupAccessModel::where('uid',$uid)
+        ->column('group_id');
+    $rules_list = AdminAuthGroupModel::where('id','in',$group_ids)
+        ->where('status',1)
+        ->column('rules');
+    foreach ($rules_list as $rules){
+        $auth_rule = array_merge($auth_rule,explode(',',$rules));
+    }
+    return AdminAuthRuleModel::where('name',$name)
+        ->where('status',1)
+        ->whereIn('id',$auth_rule)
+        ->isExists();
 }

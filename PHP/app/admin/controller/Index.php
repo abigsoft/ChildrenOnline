@@ -5,25 +5,27 @@ namespace app\admin\controller;
 
 use app\admin\model\AdminAuthRuleModel;
 use app\common\controller\BaseController;
+use think\facade\Db;
 
-class Index extends BaseController
+class Index extends Base
 {
     public function index()
     {
-        $auth = new \liliuwei\think\Auth();
         $data = AdminAuthRuleModel::order('sort asc,id desc')
             ->where('is_show',1)
             ->where('status',1)
             ->select()->toArray();
         $data = list_to_tree($data);
-        if ($this->admin_info['is_admin'] != 1) {
+        if ($this->request->admin_info['is_admin'] != 1) {
             foreach ($data as $k => $v) {
-                if (!$auth->check($v['name'], session('admin_id'))) {
+                //检查权限是否存在
+
+                if (!auth_check($v['name'], $this->request->admin_id)) {
                     unset($data[$k]);
                 } else {
                     if (isset($v['_child'])) {
                         foreach ($v['_child'] as $key => $value) {
-                            if (!$auth->check($value['name'], session('admin_id'))) {
+                            if (!auth_check($value['name'], $this->request->admin_id)) {
                                 unset($data[$k]['_child'][$key]);
                             }
                         }
@@ -32,7 +34,8 @@ class Index extends BaseController
             }
         }
         $this->assign('menus',$data);
-        return view('index');
+        $this->assign('admin_info',$this->request->admin_info);
+        return view('index/index');
     }
 
     //后台首页框架内容
@@ -41,17 +44,18 @@ class Index extends BaseController
         //会员总数
         $version = Db::query('SELECT VERSION() AS ver');
         $config = [
-            'url' => $_SERVER['HTTP_HOST'],
-            'document_root' => $_SERVER['DOCUMENT_ROOT'],
+            'url' => $this->request->host(),
             'server_os' => PHP_OS,
-            'server_port' => $_SERVER['SERVER_PORT'],
-            'server_soft' => $_SERVER['SERVER_SOFTWARE'],
+            'server_port' => $this->request->getLocalPort(),
+            'server_ip' => $this->request->getLocalIp(),
+            'client_port' => $this->request->getRemotePort(),
+            'client_ip' => $this->request->getRemoteIp(),
             'php_version' => PHP_VERSION,
             'mysql_version' => $version[0]['ver'],
             'max_upload_size' => ini_get('upload_max_filesize')
         ];
         $this->assign('config', $config);
-        return view('main');
+        return view('index/main');
     }
 
     function password(){

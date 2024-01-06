@@ -5,11 +5,11 @@
         <ul class="nav" id="side-menu">
             <li class="nav-header" style="background-size:cover;">
                 <div class="dropdown profile-element" align="center">
-                    <span style="font-size: 44px">{:config('sys.site_title')}</span>
+                    <span><img alt="image" class="img-circle" src="/static/logo.png" width="80" height="80"/></span>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
 						<span class="clear">
-							<!--span class="block m-t-xs"><strong
-                                    class="font-bold">{:config('sys.site_title')}</strong></span-->
+							<span class="block m-t-xs"><strong
+                                    class="font-bold">{$config.site_title}</strong></span>
 							<span class="text-muted text-xs block">{$admin_info.fullname}<b class="caret"></b></span>
 						</span>
                     </a>

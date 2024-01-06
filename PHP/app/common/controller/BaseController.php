@@ -60,4 +60,8 @@ class BaseController
             'data' => $data
         ]);
     }
+
+    protected function assign($name,$value){
+        View::assign([$name => $value]);
+    }
 }

@@ -34,4 +34,20 @@ class Request extends \Webman\Http\Request
     {
         return strtolower(str_replace("app\\" . ($this->app) . "\controller\\", "", $this->controller));
     }
+
+    public function param($data = []):array|null
+    {
+        $param = [];
+        if(!empty($data) && is_array($data)){
+            foreach ($data as $k=>$v){
+                if(is_int($k)){//代表仅取值
+                    $param[$v] = $this->input($v);
+                }elseif(is_string($k)){
+                    $param[$k] = $this->input($k,$v);
+                }
+            }
+            return $param;
+        }
+        return $this->all();
+    }
 }

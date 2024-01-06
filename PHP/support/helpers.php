@@ -303,28 +303,31 @@ function route(string $name, ...$parameters): string
  * @param mixed $default
  * @return mixed|bool|Session
  */
-function session($key = null, $default = null)
+function session($name = '', $value = '')
 {
     $session = \request()->session();
-    if (null === $key) {
-        return $session;
-    }
-    if (is_array($key)) {
-        $session->put($key);
-        return null;
-    }
-    if (strpos($key, '.')) {
-        $keyArray = explode('.', $key);
-        $value = $session->all();
-        foreach ($keyArray as $index) {
-            if (!isset($value[$index])) {
-                return $default;
+    if($name === null){
+        $session->refresh();
+    }elseif ('' === $name) {
+        return $session->all();
+    }elseif(is_null($value)){
+        $session->delete($name);
+    }elseif($value == ''){
+        if (strpos($name, '.')) {
+            $keyArray = explode('.', $name);
+            $value = $session->all();
+            foreach ($keyArray as $index) {
+                if (!isset($value[$index])) {
+                    return null;
+                }
+                $value = $value[$index];
             }
-            $value = $value[$index];
+            return $value;
         }
-        return $value;
+        return $session->get($name, null);
+    }else{
+        $session->put($name,$value);
     }
-    return $session->get($key, $default);
 }
 
 /**

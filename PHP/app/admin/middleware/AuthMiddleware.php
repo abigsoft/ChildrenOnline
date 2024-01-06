@@ -51,6 +51,7 @@ class AuthMiddleware implements MiddlewareInterface
 
         }
         $request->admin_info = $admin_info;
+        $request->admin_id = $admin_id;
         // 不需要登录，请求继续向洋葱芯穿越
         return $handler($request);
     }

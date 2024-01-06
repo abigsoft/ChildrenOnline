@@ -4,7 +4,10 @@ namespace app\admin\controller;
 use Abigsoft\LikeWebmanTp\facade\Url;
 use app\admin\model\AdminModel;
 use app\common\controller\BaseController;
+use app\common\exception\ParamException;
 use support\Request;
+use think\exception\ValidateException;
+use think\facade\Db;
 use Webman\Captcha\CaptchaBuilder;
 use Webman\Captcha\PhraseBuilder;
 use Webman\Route;
@@ -15,15 +18,15 @@ class Login extends BaseController
     //用户登录
     public function index()
     {
-        if (!$this->request->isAjax()) {
+        if (!$this->request->isPost()) {
             return view('login/index');
         } else {
-            $data = $this->request->only([
+            $data = $this->request->param([
                 'account' => '',
                 'password' => '',
                 'verify' => '',
-            ], 'post', null);
-            if (!captcha_check($data['verify'])) {
+            ]);
+            if(session('captcha','') != $data['verify']){
                 throw new ValidateException('验证码错误');
             }
             $hasUser = AdminModel::where('username',$data['account'])->find();
@@ -46,10 +49,10 @@ class Login extends BaseController
             AdminModel::where('id', $hasUser['id'])
                 ->update([
                     'login_times'=>Db::raw('login_times + 1'),
-                    'last_login_ip'=>$this->request->ip(),
+                    'last_login_ip'=>$this->request->getRemoteIp(),
                     'last_login_time'=>formatDate(),
                 ]);
-            $this->success('登录成功', url('index/index'));
+            return $this->success('登录成功', url('index/index'));
         }
     }
 
@@ -61,7 +64,7 @@ class Login extends BaseController
         // 生成验证码
         $builder->build(128,38);
         // 将验证码的值存储到session中
-        session(['captcha'=>$builder->getPhrase()]);
+        session('captcha',$builder->getPhrase());
         // 获得验证码图片二进制数据
         $img_content = $builder->get();
         // 输出验证码二进制数据
