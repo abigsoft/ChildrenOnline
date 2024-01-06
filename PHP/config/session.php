@@ -18,9 +18,9 @@ use Webman\Session\RedisClusterSessionHandler;
 
 return [
 
-    'type' => 'file', // or redis or redis_cluster
+    'type' => 'redis', // or redis or redis_cluster
 
-    'handler' => FileSessionHandler::class,
+    'handler' => RedisSessionHandler::class,
 
     'config' => [
         'file' => [
@@ -46,7 +46,7 @@ return [
     
     'auto_update_timestamp' => false,
 
-    'lifetime' => 7*24*60*60,
+    'lifetime' => 86400,
 
     'cookie_lifetime' => 365*24*60*60,
 
