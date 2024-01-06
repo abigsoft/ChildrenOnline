@@ -20,5 +20,18 @@ namespace support;
  */
 class Request extends \Webman\Http\Request
 {
+    public function isPost(): bool
+    {
+        return $this->method() == 'POST';
+    }
 
+    public function isGet(): bool
+    {
+        return $this->method() == 'GET';
+    }
+
+    public function getController(): array|string|null
+    {
+        return strtolower(str_replace("app\\" . ($this->app) . "\controller\\", "", $this->controller));
+    }
 }

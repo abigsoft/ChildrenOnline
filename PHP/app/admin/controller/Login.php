@@ -1,0 +1,80 @@
+<?php
+
+namespace app\admin\controller;
+
+use app\admin\model\AdminModel;
+use app\common\controller\BaseController;
+use support\Request;
+use Webman\Captcha\CaptchaBuilder;
+use Webman\Captcha\PhraseBuilder;
+use Webman\Route;
+
+class Login extends BaseController
+{
+    protected array $noNeedLogin = ['index','verify','logout'];
+    //用户登录
+    public function index()
+    {
+        //Route::getByName();
+        if (!$this->request->isAjax()) {
+            return view('login/index');
+        } else {
+            $data = $this->request->only([
+                'account' => '',
+                'password' => '',
+                'verify' => '',
+            ], 'post', null);
+            if (!captcha_check($data['verify'])) {
+                throw new ValidateException('验证码错误');
+            }
+            $hasUser = AdminModel::where('username',$data['account'])->find();
+            if(empty($hasUser)){
+                throw new ValidateException("请检查用户名或者密码");
+            }
+            $hasUser = $hasUser->toArray();
+            if(buildPass($data['password']) != $hasUser['password']){
+                throw new ParamException("请检查用户名或者密码");
+            }
+
+            if(1 != $hasUser['status']){
+                throw new ParamException("该账号被禁用");
+            }
+
+            session('admin_id',$hasUser['id']);
+            session('admin', $hasUser);
+            session('admin_sign', data_auth_sign($hasUser));
+
+            AdminModel::where('id', $hasUser['id'])
+                ->update([
+                    'login_times'=>Db::raw('login_times + 1'),
+                    'last_login_ip'=>$this->request->ip(),
+                    'last_login_time'=>formatDate(),
+                ]);
+            $this->success('登录成功', url('index/index'));
+        }
+    }
+
+    //验证码
+    public function verify()
+    {
+        $captcha = new PhraseBuilder(4, '0123456789');
+        $builder = new CaptchaBuilder(null, $captcha);
+        // 生成验证码
+        $builder->build(128,38);
+        // 将验证码的值存储到session中
+        session(['captcha'=>$builder->getPhrase()]);
+        // 获得验证码图片二进制数据
+        $img_content = $builder->get();
+        // 输出验证码二进制数据
+        return response($img_content, 200, ['Content-Type' => 'image/jpeg']);
+    }
+
+    //退出
+    public function logout()
+    {
+        session('admin_id', null);
+        session('admin', null);
+        session('admin_sign', null);
+        return redirect(url('login/index'));
+    }
+}

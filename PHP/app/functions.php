@@ -4,7 +4,65 @@ use app\common\model\ConfigModel;
 use app\common\model\DictModel;
 use support\Cache;
 use support\Db;
+use Webman\Route;
 
+function list_to_tree($list, $pk='id',$pid = 'pid',$child = '_child',$root=0) {
+    // 创建Tree
+    $tree = array();
+    if(is_array($list)) {
+        // 创建基于主键的数组引用
+        $refer = array();
+        foreach ($list as $key => $data) {
+            $refer[$data[$pk]] =& $list[$key];
+        }
+        foreach ($list as $key => $data) {
+            // 判断是否存在parent
+            $parentId = $data[$pid];
+            if ($root == $parentId) {
+                $tree[] =& $list[$key];
+            }else{
+                if (isset($refer[$parentId])) {
+                    $parent =& $refer[$parentId];
+                    $parent[$child][] =& $list[$key];
+                }
+            }
+        }
+    }
+    return $tree;
+}
+
+
+/**
+ * 拆分枚举类型配置项
+ *@param $str item字段值
+ */
+function parsItem($str){
+    if(empty($str)){
+        return [];
+    }
+    $str = str_replace(['：','：','：'],[':',':',':'],$str);
+    $arr = explode(",",$str);
+    $value = [];
+    foreach($arr as $k=>$v){
+        if(strpos($v,':')){
+            list($a,$b) = explode(':',$v);
+            $value[$a] = $b;
+        }else{
+            $value = $arr;
+        }
+    }
+    return $value;
+}
+/**
+ * 拆分数组类型配置项
+ *@param $str value字段值
+ */
+function parsItemArr($str){
+    if(empty($str)){
+        return [];
+    }
+    return str_replace([',','，','，'],"\r\n",$str);
+}
 /**
  * Here is your custom functions.
  */
@@ -269,4 +327,20 @@ function toUnderScore($str)
         return '_'.strtolower($matchs[0]);
     },$str);
     return trim(preg_replace('/_{2,}/','_',$dstr),'_');
+}
+
+if (!function_exists('url')) {
+    /**
+     * Url生成
+     * @param string      $name    路由地址
+     * @param array       $vars   变量
+     */
+    function url(string $name = '', array $vars = []): string
+    {
+        //$request = request();
+        if(empty($vars)){
+            return $name;
+        }
+        return $name . http_build_query($vars);
+    }
 }

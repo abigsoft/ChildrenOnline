@@ -20,4 +20,10 @@ use support\view\ThinkPHP;
 return [
     //'handler' => Raw::class,
     'handler' => ThinkPHP::class,
+    'options' => [
+        // 模板引擎普通标签开始标记
+        'tpl_begin'     => '{',
+        // 模板引擎普通标签结束标记
+        'tpl_end'       => '}',
+    ],
 ];

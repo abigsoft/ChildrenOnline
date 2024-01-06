@@ -17,5 +17,8 @@ return [
     '' => [
         // ... 这里省略其它中间件
         //app\common\middleware\StaticFile::class,
+    ],
+    'admin' => [
+        app\admin\middleware\AuthMiddleware::class,
     ]
 ];
