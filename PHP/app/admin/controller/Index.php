@@ -7,11 +7,19 @@ use app\admin\model\AdminAuthRuleModel;
 use app\admin\model\AdminModel;
 use app\common\controller\BaseController;
 use think\facade\Db;
+use Tinywan\Jwt\JwtToken;
 
 class Index extends Base
 {
     public function index()
     {
+        $user = [
+            'id'  => 'abcdefg',
+            'name'  => 'test',
+            'client' => JwtToken::TOKEN_CLIENT_MOBILE
+        ];
+        $token = JwtToken::generateToken($user);
+        d($token);
         $data = AdminAuthRuleModel::order('sort asc,id desc')
             ->where('is_show',1)
             ->where('status',1)

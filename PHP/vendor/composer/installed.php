@@ -720,6 +720,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'tinywan/jwt' => array(
+            'pretty_version' => 'v1.8.6',
+            'version' => '1.8.6.0',
+            'reference' => 'db1565ea3249f4b564127cb8476bcc65571afbf9',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../tinywan/jwt',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'tinywan/storage' => array(
             'pretty_version' => '1.0.0',
             'version' => '1.0.0.0',

@@ -17,7 +17,15 @@ class WordMessage implements Consumer
             if(is_string($data)){
                 Gateway::sendToAll($data);
             }else{
-                Gateway::sendToAll(json_encode($data));
+                if(isset($data['uid']) && isset($data['data']) && isset($data['group'])){
+                    if($data['uid'] == 'all'){
+                        Gateway::sendToAll(json_encode($data['data']));
+                    }elseif(!$data['group']){
+                        Gateway::sendToUid($data['uid'],json_encode($data['data']));
+                    }else{
+                        Gateway::sendToGroup($data['uid'],json_encode($data['data']));
+                    }
+                }
             }
         } catch (\Exception $e) {
             Event::emit('throw.chat',$e);

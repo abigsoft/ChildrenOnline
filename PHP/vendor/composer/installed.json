@@ -5056,6 +5056,56 @@
             "install-path": "../taoser/webman-validate"
         },
         {
+            "name": "tinywan/jwt",
+            "version": "v1.8.6",
+            "version_normalized": "1.8.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Tinywan/webman-jwt.git",
+                "reference": "db1565ea3249f4b564127cb8476bcc65571afbf9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Tinywan/webman-jwt/zipball/db1565ea3249f4b564127cb8476bcc65571afbf9",
+                "reference": "db1565ea3249f4b564127cb8476bcc65571afbf9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "firebase/php-jwt": "^6.8",
+                "php": "^7.1||^8.0",
+                "workerman/webman-framework": "^1.2.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.6",
+                "illuminate/database": "^8.83",
+                "mockery/mockery": "^1.5",
+                "phpstan/phpstan": "^1.4",
+                "phpunit/phpunit": "^9.0",
+                "topthink/think-orm": "^2.0",
+                "vimeo/psalm": "^4.22",
+                "workerman/webman": "^1.0"
+            },
+            "time": "2023-11-19T04:49:42+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Tinywan\\Jwt\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "JSON Web Token (JWT) for webman plugin",
+            "support": {
+                "issues": "https://github.com/Tinywan/webman-jwt/issues",
+                "source": "https://github.com/Tinywan/webman-jwt/tree/v1.8.6"
+            },
+            "install-path": "../tinywan/jwt"
+        },
+        {
             "name": "tinywan/storage",
             "version": "1.0.0",
             "version_normalized": "1.0.0.0",
