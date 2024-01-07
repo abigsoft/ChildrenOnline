@@ -28,6 +28,7 @@ class ComposerStaticInit9e207f006f1373cff56073ec28e6e256
         'ef65a1626449d89d0811cf9befce46f0' => __DIR__ . '/..' . '/illuminate/events/functions.php',
         'd7aea416e3f938cf5640aa6138b497ab' => __DIR__ . '/..' . '/isszz/webman-sensitive/src/helpers.php',
         'b601d78e85da6f830c38c70f8e8382e6' => __DIR__ . '/..' . '/next/var-dumper/src/helpers.php',
+        'b33e3d135e5d9e47d845c576147bda89' => __DIR__ . '/..' . '/php-di/php-di/src/functions.php',
         '2ffd98f0768af7a16d85759bb5922585' => __DIR__ . '/..' . '/taoser/webman-validate/src/helper.php',
         '35e9f8f50f832a8bb63c840d66d30e3c' => __DIR__ . '/..' . '/xy_jx/utils/src/helpers.php',
         'da5b71a9ad8465d48da441e2f36823b6' => __DIR__ . '/../..' . '/support/helpers.php',
@@ -55,12 +56,17 @@ class ComposerStaticInit9e207f006f1373cff56073ec28e6e256
         't' => 
         array (
             'tinywan\\' => 8,
+            'think\\composer\\' => 15,
             'think\\' => 6,
             'taoser\\' => 7,
         ),
         's' => 
         array (
             'support\\' => 8,
+        ),
+        'l' => 
+        array (
+            'liliuwei\\think\\' => 15,
         ),
         'i' => 
         array (
@@ -129,6 +135,7 @@ class ComposerStaticInit9e207f006f1373cff56073ec28e6e256
             'Psr\\Clock\\' => 10,
             'Psr\\Cache\\' => 10,
             'PhpOption\\' => 10,
+            'PhpDocReader\\' => 13,
         ),
         'O' => 
         array (
@@ -151,9 +158,11 @@ class ComposerStaticInit9e207f006f1373cff56073ec28e6e256
             'League\\Flysystem\\Local\\' => 23,
             'League\\Flysystem\\' => 17,
             'Lcobucci\\JWT\\' => 13,
+            'Laravel\\SerializableClosure\\' => 28,
         ),
         'I' => 
         array (
+            'Invoker\\' => 8,
             'Intervention\\Image\\' => 19,
             'Illuminate\\Support\\' => 19,
             'Illuminate\\Redis\\' => 17,
@@ -183,6 +192,10 @@ class ComposerStaticInit9e207f006f1373cff56073ec28e6e256
         array (
             'Dotenv\\' => 7,
             'Doctrine\\Inflector\\' => 19,
+            'Doctrine\\Deprecations\\' => 22,
+            'Doctrine\\Common\\Lexer\\' => 22,
+            'Doctrine\\Common\\Annotations\\' => 28,
+            'DI\\' => 3,
         ),
         'C' => 
         array (
@@ -226,6 +239,10 @@ class ComposerStaticInit9e207f006f1373cff56073ec28e6e256
         array (
             0 => __DIR__ . '/..' . '/tinywan/weather/src',
         ),
+        'think\\composer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/topthink/think-installer/src',
+        ),
         'think\\' => 
         array (
             0 => __DIR__ . '/..' . '/topthink/think-cache/src',
@@ -242,6 +259,10 @@ class ComposerStaticInit9e207f006f1373cff56073ec28e6e256
         'support\\' => 
         array (
             0 => __DIR__ . '/..' . '/workerman/webman-framework/src/support',
+        ),
+        'liliuwei\\think\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/liliuwei/thinkphp-auth/src',
         ),
         'isszz\\sensitive\\' => 
         array (
@@ -444,6 +465,10 @@ class ComposerStaticInit9e207f006f1373cff56073ec28e6e256
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
         ),
+        'PhpDocReader\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-di/phpdoc-reader/src/PhpDocReader',
+        ),
         'Opis\\Closure\\' => 
         array (
             0 => __DIR__ . '/..' . '/opis/closure/src',
@@ -483,6 +508,14 @@ class ComposerStaticInit9e207f006f1373cff56073ec28e6e256
         'Lcobucci\\JWT\\' => 
         array (
             0 => __DIR__ . '/..' . '/lcobucci/jwt/src',
+        ),
+        'Laravel\\SerializableClosure\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/serializable-closure/src',
+        ),
+        'Invoker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-di/invoker/src',
         ),
         'Intervention\\Image\\' => 
         array (
@@ -565,6 +598,22 @@ class ComposerStaticInit9e207f006f1373cff56073ec28e6e256
         'Doctrine\\Inflector\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector',
+        ),
+        'Doctrine\\Deprecations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/deprecations/lib/Doctrine/Deprecations',
+        ),
+        'Doctrine\\Common\\Lexer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/lexer/src',
+        ),
+        'Doctrine\\Common\\Annotations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations',
+        ),
+        'DI\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-di/php-di/src',
         ),
         'Composer\\CaBundle\\' => 
         array (

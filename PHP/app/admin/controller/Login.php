@@ -45,6 +45,7 @@ class Login extends BaseController
             session('admin_id',$hasUser['id']);
             session('admin', $hasUser);
             session('admin_sign', data_auth_sign($hasUser));
+            session('admin_auth', getAdminAuth($hasUser['id']));
 
             AdminModel::where('id', $hasUser['id'])
                 ->update([
@@ -61,13 +62,9 @@ class Login extends BaseController
     {
         $captcha = new PhraseBuilder(4, '0123456789');
         $builder = new CaptchaBuilder(null, $captcha);
-        // 生成验证码
         $builder->build(128,38);
-        // 将验证码的值存储到session中
         session('captcha',$builder->getPhrase());
-        // 获得验证码图片二进制数据
         $img_content = $builder->get();
-        // 输出验证码二进制数据
         return response($img_content, 200, ['Content-Type' => 'image/jpeg']);
     }
 
@@ -77,6 +74,7 @@ class Login extends BaseController
         session('admin_id', null);
         session('admin', null);
         session('admin_sign', null);
+        session('admin_auth',null);
         return redirect(url('login/index'));
     }
 }

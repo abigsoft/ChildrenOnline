@@ -5,6 +5,7 @@ namespace app\common\controller;
 use support\Request;
 use support\Cache;
 use support\View;
+
 class BaseController
 {
     protected $request;
@@ -29,7 +30,7 @@ class BaseController
         $this->config = $config;
 
         View::assign(['config' => $config]);
-        View::assign(['admin_info' => $request->admin_info]);
+
     }
 
     // 初始化
@@ -61,7 +62,8 @@ class BaseController
         ]);
     }
 
-    protected function assign($name,$value){
-        View::assign([$name => $value]);
+    protected function assign(...$vars)
+    {
+        View::assign(...$vars);
     }
 }

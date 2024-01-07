@@ -207,7 +207,7 @@ function buildConfig()
 
 function buildDict()
 {
-    $config_data = Cache::get('config_dict');
+    $config_data = Cache::get('dict');
     if (!$config_data) {
         $array_dict = [];
         $list = DictModel::where('status',1)->column('name,type,data');
@@ -344,7 +344,7 @@ if (!function_exists('url')) {
     }
 }
 
-function auth_check($name,$uid){
+function getAdminAuth($uid){
     $auth_rule = [];
     $group_ids = AdminAuthGroupAccessModel::where('uid',$uid)
         ->column('group_id');
@@ -354,8 +354,15 @@ function auth_check($name,$uid){
     foreach ($rules_list as $rules){
         $auth_rule = array_merge($auth_rule,explode(',',$rules));
     }
-    return AdminAuthRuleModel::where('name',$name)
-        ->where('status',1)
+    return AdminAuthRuleModel::where('status',1)
         ->whereIn('id',$auth_rule)
-        ->isExists();
+        ->column('name')?:[];
+}
+
+function fill_array($data)
+{
+    if(!isset($data)){
+        return '';
+    }
+    return $data;
 }

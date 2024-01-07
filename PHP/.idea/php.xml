@@ -109,6 +109,7 @@
       <path value="$PROJECT_DIR$/vendor/webman/action-hook" />
       <path value="$PROJECT_DIR$/vendor/isszz/webman-sensitive" />
       <path value="$PROJECT_DIR$/vendor/abigsoft/like-webman-tp" />
+      <path value="$PROJECT_DIR$/vendor/laravel/serializable-closure" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />

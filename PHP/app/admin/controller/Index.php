@@ -4,6 +4,7 @@ namespace app\admin\controller;
 
 
 use app\admin\model\AdminAuthRuleModel;
+use app\admin\model\AdminModel;
 use app\common\controller\BaseController;
 use think\facade\Db;
 
@@ -16,16 +17,16 @@ class Index extends Base
             ->where('status',1)
             ->select()->toArray();
         $data = list_to_tree($data);
-        if ($this->request->admin_info['is_admin'] != 1) {
+        if ($this->admin_info['is_admin'] != 1) {
             foreach ($data as $k => $v) {
                 //检查权限是否存在
 
-                if (!auth_check($v['name'], $this->request->admin_id)) {
+                if (!in_array($v['name'],$this->admin_rule)) {
                     unset($data[$k]);
                 } else {
                     if (isset($v['_child'])) {
                         foreach ($v['_child'] as $key => $value) {
-                            if (!auth_check($value['name'], $this->request->admin_id)) {
+                            if (!in_array($value['name'],$this->admin_rule)) {
                                 unset($data[$k]['_child'][$key]);
                             }
                         }
@@ -34,7 +35,7 @@ class Index extends Base
             }
         }
         $this->assign('menus',$data);
-        $this->assign('admin_info',$this->request->admin_info);
+        $this->assign('admin_info',$this->admin_info);
         return view('index/index');
     }
 
@@ -66,14 +67,14 @@ class Index extends Base
         $old_pass = $this->request->post('old_pass');
 
         $old_pass = buildPass($old_pass);
-        if($old_pass != (AdminModel::where('id',$this->admin_info->id)->value('password',''))){
-            return $this->err('原密码输入不正确');
+        if($old_pass != (AdminModel::where('id',$this->admin_id)->value('password',''))){
+            return $this->error('原密码输入不正确');
         }
         $password = buildPass($password);
         if($password == $old_pass){
-            return $this->ajaxReturn($this->errorCode,'密码没有做修改');
+            return $this->error('密码没有做修改');
         }
         AdminModel::where('id',$this->admin_info->id)->update(['password'=>$password]);
-        return $this->suc('修改成功');
+        return $this->success('修改成功');
     }
 }
