@@ -26,7 +26,6 @@ class Events
 
     public static function onWebSocketConnect($client_id, $data)
     {
-        var_export($data);
         if (isset($data['get']['token'])) {
             try {
                 $uid = \Tinywan\Jwt\JwtToken::verify(1,$data['get']['token'])['extend']['id'];
