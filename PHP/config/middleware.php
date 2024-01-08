@@ -20,5 +20,8 @@ return [
     ],
     'admin' => [
         app\admin\middleware\AuthMiddleware::class,
-    ]
+    ],
+    'api' => [
+        app\api\middleware\JwtMiddleware::class,
+    ],
 ];

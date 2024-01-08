@@ -19,7 +19,7 @@ return [
         'refresh_exp' => 86400 * 20,
 
         /** refresh 令牌是否禁用，默认不禁用 false */
-        'refresh_disable' => false,
+        'refresh_disable' => true,
 
         /** 令牌签发者 */
         'iss' => 'webman.tinywan.cn',
@@ -43,8 +43,17 @@ return [
         'cache_refresh_token_pre' => 'JWT:REFRESH_TOKEN:',
 
         /** 用户信息模型 */
-        'user_model' => function ($uid) {
-            return [];
+        'user_model' => function($uid) {
+            $user_info = \support\Redis::get('user_info_' . $uid);
+            if(!$user_info){
+                $user_info = \think\facade\Db::table('member')->find()->toArray();
+                if(!$user_info){
+                    return [];
+                }
+            }
+            \support\Redis::set('user_info_' . $uid, $user_info);
+            // 返回一个数组
+            return $user_info;
         },
 
         /** access令牌私钥 */
