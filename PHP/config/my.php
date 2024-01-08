@@ -6,4 +6,10 @@ return [
 
     'jwtExpireCode'			=> 888,					//jwt过期
     'jwtErrorCode'			=> 887,					//jwt无效
+
+    'steam_api' => [
+        'appid' => '',
+        'secret' => '',
+        'domain'=>''
+    ]
 ];
