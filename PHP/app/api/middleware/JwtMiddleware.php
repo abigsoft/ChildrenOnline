@@ -11,17 +11,13 @@ class JwtMiddleware implements MiddlewareInterface
 {
     public function process(Request $request, callable $handler) : Response
     {
-        $uid = \Tinywan\Jwt\JwtToken::getCurrentId();
-        if(!$uid){
-            throw new AuthException();
-        }
-
         // 访问的方法需要登录
         if (!in_array($request->getController(), ['login','version','register'])) {
-            // 拦截请求，返回一个重定向响应，请求停止向洋葱芯穿越
-            throw new AuthException();
+            $uid = \Tinywan\Jwt\JwtToken::getCurrentId();
+            if(!$uid){
+                throw new AuthException();
+            }
         }
-
         // 不需要登录，请求继续向洋葱芯穿越
         return $handler($request);
     }

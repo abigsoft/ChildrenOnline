@@ -28,6 +28,7 @@ return array(
     'd7aea416e3f938cf5640aa6138b497ab' => $vendorDir . '/isszz/webman-sensitive/src/helpers.php',
     'b601d78e85da6f830c38c70f8e8382e6' => $vendorDir . '/next/var-dumper/src/helpers.php',
     'b33e3d135e5d9e47d845c576147bda89' => $vendorDir . '/php-di/php-di/src/functions.php',
+    'e39a8b23c42d4e1452234d762b03835a' => $vendorDir . '/ramsey/uuid/src/functions.php',
     '2ffd98f0768af7a16d85759bb5922585' => $vendorDir . '/taoser/webman-validate/src/helper.php',
     '35e9f8f50f832a8bb63c840d66d30e3c' => $vendorDir . '/xy_jx/utils/src/helpers.php',
     'da5b71a9ad8465d48da441e2f36823b6' => $baseDir . '/support/helpers.php',

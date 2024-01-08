@@ -8,7 +8,7 @@ use app\common\model\DictModel;
 use support\Cache;
 use support\Db;
 use Webman\Route;
-
+use Ramsey\Uuid\Uuid;
 function list_to_tree($list, $pk='id',$pid = 'pid',$child = '_child',$root=0) {
     // 创建Tree
     $tree = array();
@@ -365,4 +365,8 @@ function fill_array($data)
         return '';
     }
     return $data;
+}
+
+function get_uuid(){
+    return str_replace('-','',Uuid::uuid4()->toString());
 }

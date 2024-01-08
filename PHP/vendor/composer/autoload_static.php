@@ -29,6 +29,7 @@ class ComposerStaticInit9e207f006f1373cff56073ec28e6e256
         'd7aea416e3f938cf5640aa6138b497ab' => __DIR__ . '/..' . '/isszz/webman-sensitive/src/helpers.php',
         'b601d78e85da6f830c38c70f8e8382e6' => __DIR__ . '/..' . '/next/var-dumper/src/helpers.php',
         'b33e3d135e5d9e47d845c576147bda89' => __DIR__ . '/..' . '/php-di/php-di/src/functions.php',
+        'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '2ffd98f0768af7a16d85759bb5922585' => __DIR__ . '/..' . '/taoser/webman-validate/src/helper.php',
         '35e9f8f50f832a8bb63c840d66d30e3c' => __DIR__ . '/..' . '/xy_jx/utils/src/helpers.php',
         'da5b71a9ad8465d48da441e2f36823b6' => __DIR__ . '/../..' . '/support/helpers.php',
@@ -126,6 +127,11 @@ class ComposerStaticInit9e207f006f1373cff56073ec28e6e256
             'Shopwwi\\WebmanFilesystem\\' => 25,
             'Shopwwi\\WebmanAuth\\' => 19,
         ),
+        'R' => 
+        array (
+            'Ramsey\\Uuid\\' => 12,
+            'Ramsey\\Collection\\' => 18,
+        ),
         'P' => 
         array (
             'Psr\\SimpleCache\\' => 16,
@@ -203,6 +209,10 @@ class ComposerStaticInit9e207f006f1373cff56073ec28e6e256
             'Composer\\CaBundle\\' => 18,
             'Carbon\\Doctrine\\' => 16,
             'Carbon\\' => 7,
+        ),
+        'B' => 
+        array (
+            'Brick\\Math\\' => 11,
         ),
         'A' => 
         array (
@@ -437,6 +447,14 @@ class ComposerStaticInit9e207f006f1373cff56073ec28e6e256
         array (
             0 => __DIR__ . '/..' . '/shopwwi/webman-auth/src',
         ),
+        'Ramsey\\Uuid\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ramsey/uuid/src',
+        ),
+        'Ramsey\\Collection\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ramsey/collection/src',
+        ),
         'Psr\\SimpleCache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
@@ -631,6 +649,10 @@ class ComposerStaticInit9e207f006f1373cff56073ec28e6e256
         'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
+        ),
+        'Brick\\Math\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/brick/math/src',
         ),
         'App\\' => 
         array (
