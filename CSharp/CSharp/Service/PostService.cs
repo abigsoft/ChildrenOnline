@@ -23,7 +23,7 @@ namespace CSharp.Service
             ResultEntity result = new ResultEntity();
             Thread thread = new Thread(() =>
             {
-                String html = CurlHelper.Post(url, token, password, dic);
+                String html = CurlHelper.Post(url, token, dic);
                 JToken res = JsonHelper.ExtractAll(html);
                 if (res != null)
                 {
@@ -50,7 +50,7 @@ namespace CSharp.Service
             ResultEntity result = new ResultEntity();
             Thread thread = new Thread(() =>
             {
-                String html = CurlHelper.Get(url, token, password, dic);
+                String html = CurlHelper.Get(url, token,  dic);
                 JToken res = JsonHelper.ExtractAll(html);
                 if (res != null)
                 {

@@ -14,9 +14,8 @@ namespace CSharp.Helper
         /// </summary>
         /// <param name="url">请求后台地址</param>
         /// <returns></returns>
-        public static string Post(string url, String token = "", string password = "", Dictionary<string, string> dic = null)
+        public static string Post(string url, String token = "", Dictionary<string, string> dic = null)
         {
-            //ServicePointManager.SecurityProtocol = (SecurityProtocolType)192 | (SecurityProtocolType)768 | (SecurityProtocolType)3072;
             string result = "";
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
             req.Method = "POST";
@@ -24,9 +23,7 @@ namespace CSharp.Helper
             if (token != "")
             {
                 req.Headers["Authorization"] = "Bearer " + token;
-                req.Headers["keySecret"] = password;
             }
-            req.Proxy = null;
             req.Headers["Version"] = ConfigModel.version_id.ToString();
             req.Timeout = 60000;
             #region 添加Post 参数
@@ -45,14 +42,13 @@ namespace CSharp.Helper
 
             byte[] data = Encoding.UTF8.GetBytes(builder.ToString());
             req.ContentLength = data.Length;
-
+            using (Stream reqStream = req.GetRequestStream())
+            {
+                reqStream.Write(data, 0, data.Length);
+                reqStream.Close();
+            }
             try
             {
-                using (Stream reqStream = req.GetRequestStream())
-                {
-                    reqStream.Write(data, 0, data.Length);
-                    reqStream.Close();
-                }
                 #endregion
                 HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
                 Stream stream = resp.GetResponseStream();
@@ -67,7 +63,7 @@ namespace CSharp.Helper
             catch (Exception e)
             {
                 Console.WriteLine(result);
-                return "{\"status\":203,\"msg\":\"系统错误1\",\"data\":\"\"}";
+                return "{\"status\":203,\"msg\":\"服务异常\",\"data\":\"\"}";
             }
 
 
@@ -79,7 +75,7 @@ namespace CSharp.Helper
         /// <param name="url">地址</param>
         /// <param name="dic">请求参数定义</param>
         /// <returns></returns>
-        public static string Get(string url, String token = "", string password = "", Dictionary<string, string> dic = null)
+        public static string Get(string url, String token = "", Dictionary<string, string> dic = null)
         {
             string result = "";
             StringBuilder builder = new StringBuilder();
@@ -100,18 +96,14 @@ namespace CSharp.Helper
             if (token != "")
             {
                 req.Headers["Authorization"] = "Bearer " + token;
-                req.Headers["keySecret"] = password;
             }
             req.Headers["Version"] = ConfigModel.version_id.ToString();
             req.Timeout = 60000;
-            req.Proxy = null;
             //添加参数
             HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
-
             Stream stream = resp.GetResponseStream();
             try
             {
-
                 //获取内容
                 using (StreamReader reader = new StreamReader(stream))
                 {
@@ -121,7 +113,7 @@ namespace CSharp.Helper
             catch (Exception e)
             {
                 Console.WriteLine(result);
-                return "{\"status\":203,\"msg\":\"系统错误1\",\"data\":\"\"}";
+                return "{\"status\":203,\"msg\":\"服务异常\",\"data\":\"\"}";
             }
             finally
             {

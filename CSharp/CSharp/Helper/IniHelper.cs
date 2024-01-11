@@ -43,7 +43,7 @@ namespace CSharp.Helper
         #endregion
 
         #region 成员变量
-        private string fileName; //INI文件名
+        private string fileName = "conf/config.ini"; //INI文件名
         #endregion
 
         #region 属性
@@ -55,11 +55,15 @@ namespace CSharp.Helper
             set
             {
                 fileName = string.IsNullOrEmpty(value) ? "conf/config.ini" : value;
-
                 // 判断文件是否存在
                 FileInfo fileInfo = new FileInfo(fileName);
                 if ((!fileInfo.Exists))
                 {
+                    string directoryPath = Path.GetDirectoryName(fileName);
+                    if (directoryPath != null && !Directory.Exists(directoryPath))
+                    {
+                        Directory.CreateDirectory(directoryPath);
+                    }
                     //文件不存在，建立文件
                     StreamWriter sw = new StreamWriter(fileName, false, Encoding.Default);
                     try

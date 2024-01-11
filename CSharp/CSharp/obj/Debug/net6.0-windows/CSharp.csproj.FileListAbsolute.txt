@@ -3,7 +3,6 @@ F:\www\php\ChildrenOnline\CSharp\CSharp\bin\Debug\net6.0-windows\CSharp.deps.jso
 F:\www\php\ChildrenOnline\CSharp\CSharp\bin\Debug\net6.0-windows\CSharp.runtimeconfig.json
 F:\www\php\ChildrenOnline\CSharp\CSharp\bin\Debug\net6.0-windows\CSharp.dll
 F:\www\php\ChildrenOnline\CSharp\CSharp\bin\Debug\net6.0-windows\CSharp.pdb
-F:\www\php\ChildrenOnline\CSharp\CSharp\obj\Debug\net6.0-windows\CSharp.Form1.resources
 F:\www\php\ChildrenOnline\CSharp\CSharp\obj\Debug\net6.0-windows\CSharp.Properties.Resources.resources
 F:\www\php\ChildrenOnline\CSharp\CSharp\obj\Debug\net6.0-windows\CSharp.csproj.GenerateResource.cache
 F:\www\php\ChildrenOnline\CSharp\CSharp\obj\Debug\net6.0-windows\CSharp.GeneratedMSBuildEditorConfig.editorconfig
@@ -18,3 +17,5 @@ F:\www\php\ChildrenOnline\CSharp\CSharp\obj\Debug\net6.0-windows\ref\CSharp.dll
 F:\www\php\ChildrenOnline\CSharp\CSharp\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
 F:\www\php\ChildrenOnline\CSharp\CSharp\obj\Debug\net6.0-windows\CSharp.csproj.AssemblyReference.cache
 F:\www\php\ChildrenOnline\CSharp\CSharp\obj\Debug\net6.0-windows\CSharp.csproj.CopyComplete
+F:\www\php\ChildrenOnline\CSharp\CSharp\obj\Debug\net6.0-windows\CSharp.FrmLogin.resources
+F:\www\php\ChildrenOnline\CSharp\CSharp\obj\Debug\net6.0-windows\CSharp.FrmUI.FrmMain.resources

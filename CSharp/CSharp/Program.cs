@@ -11,7 +11,14 @@ namespace CSharp
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            FrmLogin frm = new FrmLogin();
+            frm.ShowDialog();
+            if (frm.getToken() != null && frm.getToken() != "")
+            {
+                Application.Run(new FrmUI.FrmMain(frm.getToken()));
+            }
         }
     }
 }

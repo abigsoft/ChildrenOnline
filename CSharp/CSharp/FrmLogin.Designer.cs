@@ -1,6 +1,6 @@
 ﻿namespace CSharp
 {
-    partial class Form1
+    partial class FrmLogin
     {
         /// <summary>
         ///  Required designer variable.
@@ -53,10 +53,16 @@
             label3 = new Label();
             label4 = new Label();
             tabPage3 = new TabPage();
+            label11 = new Label();
+            label10 = new Label();
+            label9 = new Label();
+            linkLabel2 = new LinkLabel();
+            label8 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabPage2.SuspendLayout();
+            tabPage3.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -131,6 +137,7 @@
             button2.TabIndex = 3;
             button2.Text = "退出";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += doClose;
             // 
             // button1
             // 
@@ -140,6 +147,7 @@
             button1.TabIndex = 2;
             button1.Text = "登录";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label2
             // 
@@ -190,7 +198,7 @@
             comboBox1.Location = new Point(105, 126);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(271, 25);
-            comboBox1.TabIndex = 20;
+            comboBox1.TabIndex = 15;
             // 
             // label7
             // 
@@ -207,7 +215,7 @@
             radioButton2.Location = new Point(338, 95);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(38, 21);
-            radioButton2.TabIndex = 18;
+            radioButton2.TabIndex = 17;
             radioButton2.Text = "女";
             radioButton2.UseVisualStyleBackColor = true;
             // 
@@ -218,7 +226,7 @@
             radioButton1.Location = new Point(294, 95);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(38, 21);
-            radioButton1.TabIndex = 17;
+            radioButton1.TabIndex = 16;
             radioButton1.TabStop = true;
             radioButton1.Text = "男";
             radioButton1.UseVisualStyleBackColor = true;
@@ -238,7 +246,7 @@
             textBox5.Name = "textBox5";
             textBox5.PlaceholderText = "1-7个字";
             textBox5.Size = new Size(122, 23);
-            textBox5.TabIndex = 15;
+            textBox5.TabIndex = 14;
             // 
             // label5
             // 
@@ -251,35 +259,37 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(105, 61);
+            textBox3.Location = new Point(105, 30);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(271, 23);
-            textBox3.TabIndex = 13;
+            textBox3.TabIndex = 12;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(105, 30);
+            textBox4.Location = new Point(105, 64);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(271, 23);
-            textBox4.TabIndex = 12;
+            textBox4.TabIndex = 13;
             // 
             // button3
             // 
             button3.Location = new Point(237, 172);
             button3.Name = "button3";
             button3.Size = new Size(75, 23);
-            button3.TabIndex = 11;
+            button3.TabIndex = 19;
             button3.Text = "不玩撤了";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += doClose;
             // 
             // button4
             // 
             button4.Location = new Point(86, 172);
             button4.Name = "button4";
             button4.Size = new Size(75, 23);
-            button4.TabIndex = 10;
+            button4.TabIndex = 18;
             button4.Text = "提交注册";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // label3
             // 
@@ -301,6 +311,11 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(label11);
+            tabPage3.Controls.Add(label10);
+            tabPage3.Controls.Add(label9);
+            tabPage3.Controls.Add(linkLabel2);
+            tabPage3.Controls.Add(label8);
             tabPage3.Location = new Point(4, 26);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
@@ -309,7 +324,54 @@
             tabPage3.Text = "说明";
             tabPage3.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(299, 203);
+            label11.Name = "label11";
+            label11.Size = new Size(104, 17);
+            label11.TabIndex = 4;
+            label11.Text = "永久征集故事脚本";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(44, 79);
+            label10.Name = "label10";
+            label10.Size = new Size(80, 17);
+            label10.TabIndex = 3;
+            label10.Text = "没啥好说的。";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(13, 51);
+            label9.Name = "label9";
+            label9.Size = new Size(44, 17);
+            label9.TabIndex = 2;
+            label9.Text = "说明：";
+            // 
+            // linkLabel2
+            // 
+            linkLabel2.AutoSize = true;
+            linkLabel2.Location = new Point(95, 13);
+            linkLabel2.Name = "linkLabel2";
+            linkLabel2.Size = new Size(258, 17);
+            linkLabel2.TabIndex = 1;
+            linkLabel2.TabStop = true;
+            linkLabel2.Text = "https://github.com/abigsoft/ChildrenOnline";
+            linkLabel2.LinkClicked += linkLabel2_LinkClicked;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(13, 13);
+            label8.Name = "label8";
+            label8.Size = new Size(81, 17);
+            label8.TabIndex = 0;
+            label8.Text = "github开源：";
+            // 
+            // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -317,16 +379,18 @@
             Controls.Add(tabControl1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
-            Name = "Form1";
+            Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "登录注册";
-            Load += Form1_Load;
+            Load += FrmLogin_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            tabPage3.ResumeLayout(false);
+            tabPage3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -357,5 +421,10 @@
         private RadioButton radioButton2;
         private Label label7;
         private ComboBox comboBox1;
+        private Label label8;
+        private LinkLabel linkLabel2;
+        private Label label9;
+        private Label label10;
+        private Label label11;
     }
 }
