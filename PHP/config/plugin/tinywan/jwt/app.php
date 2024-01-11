@@ -7,13 +7,13 @@ return [
         'algorithms' => 'HS256',
 
         /** access令牌秘钥 */
-        'access_secret_key' => 'tfHASCaON9e4EyKg',
+        'access_secret_key' => getenv('TOKEN_MAKE'),
 
         /** access令牌过期时间，单位：秒。默认 2 小时 */
         'access_exp' => 86400 * 30,
 
         /** refresh令牌秘钥 */
-        'refresh_secret_key' => 'cee1YHY7gJnj4oZn',
+        'refresh_secret_key' => getenv('TOKEN_REFRESH'),
 
         /** refresh令牌过期时间，单位：秒。默认 7 天 */
         'refresh_exp' => 86400 * 20,
