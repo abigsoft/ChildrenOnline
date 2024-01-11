@@ -6,5 +6,10 @@ namespace CSharp
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.comboBox1.SelectedIndex = 0;
+        }
     }
 }
