@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "VI5uN6sP0RsqnBAapTbH8S7g3h/SHkp6kIAdbS1bOvHXkVx7yKwl3BYfUuKX8kZCwSYOvbsTdutfy2j+Dk06Ow==",
+  "success": true,
+  "projectFilePath": "F:\\www\\php\\ChildrenOnline\\CSharp\\AppLauncher\\AppLauncher.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\fishlee.net.simpleupdater\\5.1.2\\fishlee.net.simpleupdater.5.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

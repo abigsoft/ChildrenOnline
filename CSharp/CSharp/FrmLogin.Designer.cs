@@ -70,10 +70,10 @@
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
-            tabControl1.Location = new Point(10, 12);
+            tabControl1.Location = new Point(4, 2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(417, 253);
+            tabControl1.Size = new Size(440, 299);
             tabControl1.SizeMode = TabSizeMode.Fixed;
             tabControl1.TabIndex = 0;
             // 
@@ -90,7 +90,7 @@
             tabPage1.Location = new Point(4, 26);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(409, 223);
+            tabPage1.Size = new Size(432, 269);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "登录";
             tabPage1.UseVisualStyleBackColor = true;
@@ -98,7 +98,7 @@
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(174, 180);
+            linkLabel1.Location = new Point(198, 220);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(68, 17);
             linkLabel1.TabIndex = 8;
@@ -107,14 +107,14 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(107, 88);
+            textBox2.Location = new Point(120, 104);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(217, 23);
             textBox2.TabIndex = 7;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(107, 50);
+            textBox1.Location = new Point(120, 66);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(217, 23);
             textBox1.TabIndex = 6;
@@ -122,7 +122,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.steam;
-            pictureBox1.Location = new Point(146, 177);
+            pictureBox1.Location = new Point(167, 216);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(25, 21);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -131,19 +131,19 @@
             // 
             // button2
             // 
-            button2.Location = new Point(249, 138);
+            button2.Location = new Point(262, 164);
             button2.Name = "button2";
-            button2.Size = new Size(75, 23);
+            button2.Size = new Size(75, 30);
             button2.TabIndex = 3;
-            button2.Text = "退出";
+            button2.Text = "前往注册";
             button2.UseVisualStyleBackColor = true;
             button2.Click += doClose;
             // 
             // button1
             // 
-            button1.Location = new Point(107, 138);
+            button1.Location = new Point(99, 164);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(75, 30);
             button1.TabIndex = 2;
             button1.Text = "登录";
             button1.UseVisualStyleBackColor = true;
@@ -152,7 +152,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(57, 91);
+            label2.Location = new Point(70, 107);
             label2.Name = "label2";
             label2.Size = new Size(44, 17);
             label2.TabIndex = 1;
@@ -161,7 +161,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(57, 53);
+            label1.Location = new Point(70, 69);
             label1.Name = "label1";
             label1.Size = new Size(44, 17);
             label1.TabIndex = 0;
@@ -185,7 +185,7 @@
             tabPage2.Location = new Point(4, 26);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(409, 223);
+            tabPage2.Size = new Size(432, 269);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "注册";
             tabPage2.UseVisualStyleBackColor = true;
@@ -195,7 +195,7 @@
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "从 0 开始", "聪明智慧", "心地善良", "勇敢果断" });
-            comboBox1.Location = new Point(105, 126);
+            comboBox1.Location = new Point(117, 146);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(271, 25);
             comboBox1.TabIndex = 15;
@@ -203,7 +203,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(32, 129);
+            label7.Location = new Point(44, 149);
             label7.Name = "label7";
             label7.Size = new Size(68, 17);
             label7.TabIndex = 19;
@@ -212,7 +212,7 @@
             // radioButton2
             // 
             radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(338, 95);
+            radioButton2.Location = new Point(350, 115);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(38, 21);
             radioButton2.TabIndex = 17;
@@ -223,7 +223,7 @@
             // 
             radioButton1.AutoSize = true;
             radioButton1.Checked = true;
-            radioButton1.Location = new Point(294, 95);
+            radioButton1.Location = new Point(306, 115);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(38, 21);
             radioButton1.TabIndex = 16;
@@ -234,7 +234,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(244, 96);
+            label6.Location = new Point(256, 116);
             label6.Name = "label6";
             label6.Size = new Size(44, 17);
             label6.TabIndex = 16;
@@ -242,7 +242,7 @@
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(105, 93);
+            textBox5.Location = new Point(117, 113);
             textBox5.Name = "textBox5";
             textBox5.PlaceholderText = "1-7个字";
             textBox5.Size = new Size(122, 23);
@@ -251,7 +251,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(31, 96);
+            label5.Location = new Point(43, 116);
             label5.Name = "label5";
             label5.Size = new Size(68, 17);
             label5.TabIndex = 14;
@@ -259,33 +259,33 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(105, 30);
+            textBox3.Location = new Point(117, 50);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(271, 23);
             textBox3.TabIndex = 12;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(105, 64);
+            textBox4.Location = new Point(117, 84);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(271, 23);
             textBox4.TabIndex = 13;
             // 
             // button3
             // 
-            button3.Location = new Point(237, 172);
+            button3.Location = new Point(250, 203);
             button3.Name = "button3";
-            button3.Size = new Size(75, 23);
+            button3.Size = new Size(75, 30);
             button3.TabIndex = 19;
-            button3.Text = "不玩撤了";
+            button3.Text = "返回登录";
             button3.UseVisualStyleBackColor = true;
             button3.Click += doClose;
             // 
             // button4
             // 
-            button4.Location = new Point(86, 172);
+            button4.Location = new Point(99, 203);
             button4.Name = "button4";
-            button4.Size = new Size(75, 23);
+            button4.Size = new Size(75, 30);
             button4.TabIndex = 18;
             button4.Text = "提交注册";
             button4.UseVisualStyleBackColor = true;
@@ -294,7 +294,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(31, 64);
+            label3.Location = new Point(43, 84);
             label3.Name = "label3";
             label3.Size = new Size(68, 17);
             label3.TabIndex = 9;
@@ -303,7 +303,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(31, 33);
+            label4.Location = new Point(43, 53);
             label4.Name = "label4";
             label4.Size = new Size(68, 17);
             label4.TabIndex = 8;
@@ -319,7 +319,7 @@
             tabPage3.Location = new Point(4, 26);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(409, 223);
+            tabPage3.Size = new Size(432, 269);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "说明";
             tabPage3.UseVisualStyleBackColor = true;
@@ -327,7 +327,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(299, 203);
+            label11.Location = new Point(322, 246);
             label11.Name = "label11";
             label11.Size = new Size(104, 17);
             label11.TabIndex = 4;
@@ -375,7 +375,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(435, 277);
+            ClientSize = new Size(449, 303);
             Controls.Add(tabControl1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;

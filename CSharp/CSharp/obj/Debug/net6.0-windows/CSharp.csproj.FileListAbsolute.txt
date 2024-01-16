@@ -19,3 +19,8 @@ F:\www\php\ChildrenOnline\CSharp\CSharp\obj\Debug\net6.0-windows\CSharp.csproj.A
 F:\www\php\ChildrenOnline\CSharp\CSharp\obj\Debug\net6.0-windows\CSharp.csproj.CopyComplete
 F:\www\php\ChildrenOnline\CSharp\CSharp\obj\Debug\net6.0-windows\CSharp.FrmLogin.resources
 F:\www\php\ChildrenOnline\CSharp\CSharp\obj\Debug\net6.0-windows\CSharp.FrmUI.FrmMain.resources
+F:\www\php\ChildrenOnline\CSharp\Debug\Debug\net6.0-windows\CSharp.exe
+F:\www\php\ChildrenOnline\CSharp\Debug\Debug\net6.0-windows\CSharp.deps.json
+F:\www\php\ChildrenOnline\CSharp\Debug\Debug\net6.0-windows\CSharp.runtimeconfig.json
+F:\www\php\ChildrenOnline\CSharp\Debug\Debug\net6.0-windows\CSharp.dll
+F:\www\php\ChildrenOnline\CSharp\Debug\Debug\net6.0-windows\CSharp.pdb

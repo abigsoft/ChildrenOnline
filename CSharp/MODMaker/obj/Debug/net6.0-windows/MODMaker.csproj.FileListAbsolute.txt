@@ -1,0 +1,17 @@
+F:\www\php\ChildrenOnline\CSharp\MODMaker\bin\Debug\net6.0-windows\MODMaker.exe
+F:\www\php\ChildrenOnline\CSharp\MODMaker\bin\Debug\net6.0-windows\MODMaker.deps.json
+F:\www\php\ChildrenOnline\CSharp\MODMaker\bin\Debug\net6.0-windows\MODMaker.runtimeconfig.json
+F:\www\php\ChildrenOnline\CSharp\MODMaker\bin\Debug\net6.0-windows\MODMaker.dll
+F:\www\php\ChildrenOnline\CSharp\MODMaker\bin\Debug\net6.0-windows\MODMaker.pdb
+F:\www\php\ChildrenOnline\CSharp\MODMaker\obj\Debug\net6.0-windows\MODMaker.FrmMain.resources
+F:\www\php\ChildrenOnline\CSharp\MODMaker\obj\Debug\net6.0-windows\MODMaker.csproj.GenerateResource.cache
+F:\www\php\ChildrenOnline\CSharp\MODMaker\obj\Debug\net6.0-windows\MODMaker.GeneratedMSBuildEditorConfig.editorconfig
+F:\www\php\ChildrenOnline\CSharp\MODMaker\obj\Debug\net6.0-windows\MODMaker.AssemblyInfoInputs.cache
+F:\www\php\ChildrenOnline\CSharp\MODMaker\obj\Debug\net6.0-windows\MODMaker.AssemblyInfo.cs
+F:\www\php\ChildrenOnline\CSharp\MODMaker\obj\Debug\net6.0-windows\MODMaker.csproj.CoreCompileInputs.cache
+F:\www\php\ChildrenOnline\CSharp\MODMaker\obj\Debug\net6.0-windows\MODMaker.dll
+F:\www\php\ChildrenOnline\CSharp\MODMaker\obj\Debug\net6.0-windows\refint\MODMaker.dll
+F:\www\php\ChildrenOnline\CSharp\MODMaker\obj\Debug\net6.0-windows\MODMaker.pdb
+F:\www\php\ChildrenOnline\CSharp\MODMaker\obj\Debug\net6.0-windows\MODMaker.genruntimeconfig.cache
+F:\www\php\ChildrenOnline\CSharp\MODMaker\obj\Debug\net6.0-windows\ref\MODMaker.dll
+F:\www\php\ChildrenOnline\CSharp\MODMaker\obj\Debug\net6.0-windows\MODMaker.Properties.Resources.resources

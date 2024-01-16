@@ -48,7 +48,17 @@ namespace CSharp
 
         public void doClose(object sender, EventArgs e)
         {
-            this.Close();
+            if (this.tabControl1.SelectedIndex == 0)
+            {
+                this.tabControl1.SelectedIndex = 1;
+                return;
+            }
+            if (this.tabControl1.SelectedIndex == 1)
+            {
+                this.tabControl1.SelectedIndex = 0;
+                return;
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
