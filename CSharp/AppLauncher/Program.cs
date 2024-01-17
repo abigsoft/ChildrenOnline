@@ -12,7 +12,7 @@ namespace AppLauncher
         [STAThread]
         static void Main(string[] args)
         {
-            if(args.Length == 0 || args[0] != "steam")
+            if(args.Length == 0 || args[0] != "from:steam")
             {
                 string update_url = "http://children.abug.cc/app/pc/update.xml";
                 var updater = Updater.CreateUpdaterInstance(update_url);
@@ -21,15 +21,18 @@ namespace AppLauncher
             Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
 
-            if (!File.Exists("main.exe"))
+            if (!File.Exists("CSharp.exe"))
             {
                 MessageBox.Show("启动文件不存在");
                 return;
             }
             ProcessStartInfo proc = new System.Diagnostics.ProcessStartInfo();
             proc.UseShellExecute = true;
-            proc.FileName = Path.Combine(Application.StartupPath, "main.exe");
-            proc.Arguments = "fromlauncher:" + Process.GetCurrentProcess().Id;
+            proc.FileName = Path.Combine(Application.StartupPath, "CSharp.exe");
+            if (args.Length > 0)
+            {
+                proc.Arguments = String.Join(" ", args);
+            }
             proc.CreateNoWindow = false;
             //启动进程
             Process.Start(proc);
