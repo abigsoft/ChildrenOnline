@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            button4 = new Button();
             label3 = new Label();
             button3 = new Button();
             button2 = new Button();
@@ -92,6 +93,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(button4);
             tabPage1.Controls.Add(label3);
             tabPage1.Controls.Add(button3);
             tabPage1.Controls.Add(button2);
@@ -108,6 +110,16 @@
             tabPage1.Text = "桌宠制作";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // button4
+            // 
+            button4.Location = new Point(662, 25);
+            button4.Name = "button4";
+            button4.Size = new Size(75, 25);
+            button4.TabIndex = 8;
+            button4.Text = "新建";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -121,7 +133,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(662, 25);
+            button3.Location = new Point(581, 25);
             button3.Name = "button3";
             button3.Size = new Size(75, 25);
             button3.TabIndex = 6;
@@ -131,7 +143,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(581, 24);
+            button2.Location = new Point(500, 24);
             button2.Name = "button2";
             button2.Size = new Size(75, 25);
             button2.TabIndex = 5;
@@ -173,6 +185,7 @@
             dataGridView1.Size = new Size(531, 263);
             dataGridView1.TabIndex = 2;
             dataGridView1.RowPostPaint += dataGridView1_RowPostPaint;
+            dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
             // 
             // Column1
             // 
@@ -183,7 +196,7 @@
             // Column11
             // 
             Column11.HeaderText = "次数";
-            Column11.Items.AddRange(new object[] { "一次", "两次", "三次", "循环" });
+            Column11.Items.AddRange(new object[] { "循环", "一次", "两次", "三次" });
             Column11.Name = "Column11";
             Column11.Width = 80;
             // 
@@ -382,10 +395,11 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(500, 24);
+            button1.Location = new Point(419, 24);
             button1.Name = "button1";
             button1.Size = new Size(75, 26);
             button1.TabIndex = 2;
@@ -399,7 +413,7 @@
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(103, 25);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(381, 25);
+            comboBox1.Size = new Size(310, 25);
             comboBox1.TabIndex = 1;
             // 
             // label1
@@ -497,6 +511,7 @@
         private Label label8;
         private Label label9;
         private Label label10;
+        private Button button4;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewComboBoxColumn Column11;
         private DataGridViewComboBoxColumn Column4;

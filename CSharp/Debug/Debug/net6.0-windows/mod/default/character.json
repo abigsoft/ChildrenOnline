@@ -1,5 +1,12 @@
 {
-  "Thumb": "",
-  "Desc": "这是测试",
-  "State": []
+	"Thumb": "",
+	"Desc": "shime70.png",
+	"State": {
+		"system": {
+			"走路": ["shime1.png","shime2.png","shime3.png"],
+			"下落": ["shime4.png"],
+			"提起": ["shime5.png","shime6.png",],
+		}
+	}
+
 }

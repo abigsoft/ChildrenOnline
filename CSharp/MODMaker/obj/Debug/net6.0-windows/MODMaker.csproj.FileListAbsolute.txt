@@ -22,3 +22,4 @@ F:\www\php\ChildrenOnline\CSharp\Debug\Debug\net6.0-windows\MODMaker.dll
 F:\www\php\ChildrenOnline\CSharp\Debug\Debug\net6.0-windows\MODMaker.pdb
 F:\www\php\ChildrenOnline\CSharp\MODMaker\obj\Debug\net6.0-windows\MODMaker.csproj.AssemblyReference.cache
 F:\www\php\ChildrenOnline\CSharp\MODMaker\obj\Debug\net6.0-windows\MODMaker.csproj.CopyComplete
+F:\www\php\ChildrenOnline\CSharp\MODMaker\obj\Debug\net6.0-windows\MODMaker.FrmUI.FrmInput.resources

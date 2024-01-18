@@ -4,5 +4,8 @@
     <Compile Update="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmUI\FrmInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

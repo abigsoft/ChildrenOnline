@@ -9,35 +9,35 @@ namespace MODMaker.Entity
 {
     public class Character
     {
-        public string? Thumb { get; set; }
-        public string? Desc { get; set; }
-        public List<State>? State { get; set; }
+        public string Thumb { get; set; } = string.Empty;
+        public string Desc { get; set; } = string.Empty;
+        public List<State> State { get; set; } = new List<State>();
 
     }
 
     public class State
     {
-        public string? Name { get; set; }
-        public string? Position { get; set; }
-        public XOM? Physical { get; set; }
-        public int Play { get; set; }
-        public XOM? Mood { get; set; }
-        public List<Action>? Action { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public int Position { get; set; } = 0;
+        public XOM Physical { get; set; } = new XOM();
+        public int Play { get; set; } = 0;
+        public XOM Mood { get; set; } = new XOM();
+        public List<Action> Action { get; set; } = new List<Action> { };
     }
 
     public class Action
     {
-        public string? Img { get; set; }
-        public int ShiftX { get; set; }
-        public int ShiftY { get; set; }
-        public int Time { get; set; }
-        public int Sort { get; set; }
+        public string Img { get; set; } = string.Empty;
+        public int ShiftX { get; set; } = 0;
+        public int ShiftY { get; set; } = 0;
+        public int Time { get; set; } = 0;
+        public int Sort { get; set; } = 0;
     }
 
     public class XOM
     {
-        public int? max { get; set; }
-        public string? min { get; set; }
+        public int max { get; set; } = 0;
+        public int min { get; set; } = 0;
     }
 
     
