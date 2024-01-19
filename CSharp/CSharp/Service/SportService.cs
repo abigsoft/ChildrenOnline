@@ -41,116 +41,25 @@ namespace CSharp.Service
 
         private string format(int i = 1)
         {
-            return path + "shime" + i + ".png";
+            return Path.Combine("mod",path,"shime" + i + ".png") ;
         }
-        public Bitmap[] getDrop(int type = 1)
+        
+        public List<Image> getBmp(int[] i)
         {
-            int[] i;
-            switch (type)
-            {
-                case 1:
-                    i = new int[] { 9, 7 };
-                    break;
-                case 3:
-                    i = new int[] { 8, 10 };
-                    break;
-                default:
-                    i = new int[] { 69, 68, 69, 68, 69, 68 };
-                    break;
-            }
-            return init(i);
-        }
-        public Bitmap[] getBmp(int type = 1)
-        {
-            int[] i;
-            switch (type)
-            {
-                case 2:
-                    i = new int[] { 2, 3, 48, 47 };
-                    break;
-                case 3:
-                    i = new int[] { 49, 50, 51, 52 };
-                    break;
-                case 4:
-                    i = new int[] { 11 };
-                    break;
-                case 5:
-                    i = new int[] { 26 };
-                    break;
-                case 6:
-                    i = new int[] { 26, 11 };
-                    break;
-                case 7:
-                    i = new int[] { 15, 16, 17, 104, 105, 106, 107, 108, 109, 110, 111, 112 };
-                    break;
-                case 8:
-                    i = new int[] { 30, 31, 32, 31 };
-                    break;
-                case 9:
-                    i = new int[] { 21 };
-                    break;
-                case 10:
-                    i = new int[] { 20, 21, 20, 94 };
-                    break;
-                case 11:
-                    i = new int[] { 23 };
-                    break;
-                case 12:
-                    i = new int[] { 25, 25, 23, 24, 24, 24, 23, 25 };
-                    break;
-                case 13:
-                    i = new int[] { 14, 14, 12, 13, 13, 13, 12, 14 };
-                    break;
-                case 14:
-                    i = new int[] { 36 };
-                    break;
-                case 15:
-                    i = new int[] { 34, 35, 37, 36 };
-                    break;
-                case 16:
-                    i = new int[] { 38 };
-                    break;
-                case 17:
-                    i = new int[] { 22 };
-                    break;
-                case 18:
-                    i = new int[] { 4, 53, 4, 54 };
-                    break;
-                case 19:
-                    i = new int[] { 55, 56, 57, 58, 59, 60, 61, 62, 63 };
-                    break;
-                case 20:
-                    i = new int[] { 19, 18, 19, 18, 21, 21 };
-                    break;
-
-                case 21:
-                    i = new int[] { 5, 6, 5, 6, 96, 97, 98, 95, 99, 95, 99, 95, 99, 95, 99, 95, 99, 95, 100, 101, 100, 101, 5, 6, 5, 6, 5, 6, 102, 103 };
-                    break;
-                case 22:
-                    i = new int[] { 73, 76, 77, 78, 74, 75, 70, 79, 80 };
-                    break;
-                case 23:
-                    i = new int[] { 80 };
-                    break;
-                case 24:
-                    i = new int[] { 66, 71, 66, 72 };
-                    break;
-                case 25:
-                    i = new int[] { 9, 9, 9 };
-                    break;
-                default:
-                    i = new int[] { 1 };
-                    break;
-            }
-            return init(i);
-        }
-
-        private Bitmap[] init(int[] i)
-        {
-            Bitmap[] map = new Bitmap[i.Count()];
+            List<Image> images = new List<Image>();
             for (int j = 0; j < i.Count(); j++)
             {
-                map[j] = (Bitmap)Image.FromFile(format(i[j]));
+                images.Add(Image.FromFile(format(i[j])));
+            }
+            return images;
+        }
+
+        private Image[] init(int[] i)
+        {
+            Image[] map = new Image[i.Count()];
+            for (int j = 0; j < i.Count(); j++)
+            {
+                map[j] = Image.FromFile(format(i[j]));
             }
             return map;
         }
