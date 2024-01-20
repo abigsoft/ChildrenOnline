@@ -130,5 +130,58 @@ namespace CSharp.FrmUI
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                sendMessage();
+                e.Handled = true;
+            }
+        }
+
+        private void sendMessage()
+        {
+
+        }
+
+        private void refreshChannal()
+        {
+            string[] tabNames = { "world", "school", "admin" };
+            // 首先，移除在数组中不存在的TabPage
+            for (int i = tabControl1.TabPages.Count - 1; i >= 0; i--)
+            {
+                if (!tabNames.Contains(tabControl1.TabPages[i].Name))
+                {
+                    tabControl1.TabPages.RemoveAt(i);
+                }
+            }
+
+            // 现在添加或更新TabPage
+            foreach (var name in tabNames)
+            {
+                TabPage page = tabControl1.TabPages.Cast<TabPage>().FirstOrDefault(tp => tp.Name == name);
+
+                if (page == null)
+                {
+                    // 如果TabPage不存在，则创建它
+                    page = new TabPage(name);
+                    page.Name = name; // 设置TabPage的Name属性，以便可以与数组中的名称对应
+                    page.Text = name; // 这里假设显示的文本与name相同
+                    tabControl1.TabPages.Add(page);
+                }
+                else
+                {
+                    // 如果已存在，可以在这里进行更新操作
+                    // 例如，更新文本或其他属性
+                    page.Text = name; // 根据需要更新
+                }
+            }
+        }
+
+        private void 刷新频道ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.refreshChannal();
+        }
     }
 }
