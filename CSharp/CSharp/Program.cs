@@ -12,6 +12,8 @@ namespace CSharp
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.EnableVisualStyles();
+            Application.Run(new FrmUI.FrmChat());
+            return;
             //Application.SetCompatibleTextRenderingDefault(false);
             FrmLogin frm = new FrmLogin();
             frm.ShowDialog();

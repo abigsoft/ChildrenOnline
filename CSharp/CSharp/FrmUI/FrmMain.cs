@@ -39,10 +39,10 @@ namespace CSharp.FrmUI
                 switch (JTokenHelper.ToStr(json["type"]))
                 {
                     case "system":
-                        
+
                         break;
                 }
-                MessageBox.Show("Received message: " + message);
+                //MessageBox.Show("Received message: " + message);
             }
         }
 
@@ -162,6 +162,12 @@ namespace CSharp.FrmUI
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             WebSocketManager.Instance.OnMessageReceived -= Instance_OnMessageReceived;
+        }
+
+        private void 频道ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmUI.FrmChat frm = new FrmChat(token);
+            frm.Show();
         }
     }
 }

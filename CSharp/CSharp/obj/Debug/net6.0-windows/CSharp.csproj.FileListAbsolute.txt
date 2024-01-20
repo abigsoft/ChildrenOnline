@@ -25,3 +25,4 @@ F:\www\php\ChildrenOnline\CSharp\Debug\Debug\net6.0-windows\CSharp.runtimeconfig
 F:\www\php\ChildrenOnline\CSharp\Debug\Debug\net6.0-windows\CSharp.dll
 F:\www\php\ChildrenOnline\CSharp\Debug\Debug\net6.0-windows\CSharp.pdb
 F:\www\php\ChildrenOnline\CSharp\CSharp\obj\Debug\net6.0-windows\CSharp.Assembly.PlayPictureBox.resources
+F:\www\php\ChildrenOnline\CSharp\CSharp\obj\Debug\net6.0-windows\CSharp.FrmUI.FrmChat.resources

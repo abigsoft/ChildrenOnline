@@ -8,26 +8,26 @@ namespace CSharp.Helper
 {
     public class WinformHelper
     {
-        public static int getProgressMax(int max)
+        public static int CalculateScreenWidth(out int minX, out int maxX)
         {
-            if (max < 0)
-            {
-                return 0;
-            }
-            return max;
-        }
+            var horizontalPixels = new HashSet<int>();
+            minX = int.MaxValue;
+            maxX = int.MinValue;
 
-        public static int getProgressNow(int max, int now)
-        {
-            if (now < 0)
+            foreach (var screen in Screen.AllScreens)
             {
-                now = 0;
+                if (screen.Bounds.Left < minX) minX = screen.Bounds.Left;
+                if (screen.Bounds.Right > maxX) maxX = screen.Bounds.Right;
+
+                for (int x = screen.Bounds.Left; x < screen.Bounds.Right; x++)
+                {
+                    // 只有当横向像素点尚未被加入集合时，才将其加入
+                    horizontalPixels.Add(x);
+                }
             }
-            if (now > max)
-            {
-                now = max;
-            }
-            return now;
+
+            // 最终的总宽度即为集合中像素点的个数
+            return horizontalPixels.Count;
         }
     }
 }

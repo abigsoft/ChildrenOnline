@@ -124,13 +124,13 @@ namespace CSharp.FrmUI
             // 
             contextMenuStrip2.Items.AddRange(new ToolStripItem[] { 互动ToolStripMenuItem, 插件ToolStripMenuItem, 世界ToolStripMenuItem, 系统ToolStripMenuItem });
             contextMenuStrip2.Name = "contextMenuStrip2";
-            contextMenuStrip2.Size = new Size(101, 92);
+            contextMenuStrip2.Size = new Size(181, 114);
             // 
             // 互动ToolStripMenuItem
             // 
             互动ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { 自动ToolStripMenuItem, 休息ToolStripMenuItem, 学习ToolStripMenuItem, 工作ToolStripMenuItem });
             互动ToolStripMenuItem.Name = "互动ToolStripMenuItem";
-            互动ToolStripMenuItem.Size = new Size(100, 22);
+            互动ToolStripMenuItem.Size = new Size(180, 22);
             互动ToolStripMenuItem.Text = "互动";
             // 
             // 自动ToolStripMenuItem
@@ -162,33 +162,34 @@ namespace CSharp.FrmUI
             // 插件ToolStripMenuItem
             // 
             插件ToolStripMenuItem.Name = "插件ToolStripMenuItem";
-            插件ToolStripMenuItem.Size = new Size(100, 22);
+            插件ToolStripMenuItem.Size = new Size(180, 22);
             插件ToolStripMenuItem.Text = "插件";
             // 
             // 世界ToolStripMenuItem
             // 
             世界ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { 频道ToolStripMenuItem, 社区ToolStripMenuItem1 });
             世界ToolStripMenuItem.Name = "世界ToolStripMenuItem";
-            世界ToolStripMenuItem.Size = new Size(100, 22);
+            世界ToolStripMenuItem.Size = new Size(180, 22);
             世界ToolStripMenuItem.Text = "世界";
             // 
             // 频道ToolStripMenuItem
             // 
             频道ToolStripMenuItem.Name = "频道ToolStripMenuItem";
-            频道ToolStripMenuItem.Size = new Size(100, 22);
+            频道ToolStripMenuItem.Size = new Size(180, 22);
             频道ToolStripMenuItem.Text = "频道";
+            频道ToolStripMenuItem.Click += 频道ToolStripMenuItem_Click;
             // 
             // 社区ToolStripMenuItem1
             // 
             社区ToolStripMenuItem1.Name = "社区ToolStripMenuItem1";
-            社区ToolStripMenuItem1.Size = new Size(100, 22);
+            社区ToolStripMenuItem1.Size = new Size(180, 22);
             社区ToolStripMenuItem1.Text = "社区";
             // 
             // 系统ToolStripMenuItem
             // 
             系统ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { 设置ToolStripMenuItem1, 开发ToolStripMenuItem, toolStripSeparator2, 退出ToolStripMenuItem1 });
             系统ToolStripMenuItem.Name = "系统ToolStripMenuItem";
-            系统ToolStripMenuItem.Size = new Size(100, 22);
+            系统ToolStripMenuItem.Size = new Size(180, 22);
             系统ToolStripMenuItem.Text = "系统";
             // 
             // 设置ToolStripMenuItem1
